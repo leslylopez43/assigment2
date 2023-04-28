@@ -500,162 +500,131 @@ function attack()
       return 0;//block the human player from winning in row1 by playing in box 0
       }
     
-            else if ((TicTacToe[0]=="O") && (TicTacToe[3]=="") && (TicTacToe[6]=="O"))//see if there is an X in box 0 and 1 and an empty space in box 2
-                  {	
-                    return 3;//block the human player from winning in row1 by playing in box 3
-               }
+      else if ((TicTacToe[0]=="O") && (TicTacToe[3]=="") && (TicTacToe[6]=="O"))//see if there is an X in box 0 and 1 and an empty space in box 2
+      {	
+      return 3;//block the human player from winning in row1 by playing in box 3
+      }
     ///////////////END OF COLUMN1 TEST////////////////////////////
     ////////TEST IF HUMAN PLAYER ISABOUT TO WIN IN THE COLUMN2 AND BLOCK ////////////////
-    else if ((TicTacToe[1]=="O") && (TicTacToe[4]=="O") && (TicTacToe[7]==""))//see if there is an X in box 0 and 1 and an empty space in box 2
-    {	
+      else if ((TicTacToe[1]=="O") && (TicTacToe[4]=="O") && (TicTacToe[7]==""))//see if there is an X in box 0 and 1 and an empty space in box 2
+      {	
       return 7;//block the human player from winning in row1 by playing in box 7
-           }
-    
-           else if ((TicTacToe[1]=="") && (TicTacToe[4]=="O") && (TicTacToe[7]=="O"))//see if there is an X in box 0 and 1 and an empty space in box 2
-           {	
-             return 1;//block the human player from winning in row1 by playing in box 1
-                  }
-    
-            else if ((TicTacToe[1]=="O") && (TicTacToe[4]=="") && (TicTacToe[7]=="O"))//see if there is an X in box 0 and 1 and an empty space in box 2
-                  {	
-                    return 4;//block the human player from winning in row1 by playing in box 4
-               }
+      }
+      else if ((TicTacToe[1]=="") && (TicTacToe[4]=="O") && (TicTacToe[7]=="O"))//see if there is an X in box 0 and 1 and an empty space in box 2
+      {	
+      return 1;//block the human player from winning in row1 by playing in box 1
+      }
+      else if ((TicTacToe[1]=="O") && (TicTacToe[4]=="") && (TicTacToe[7]=="O"))//see if there is an X in box 0 and 1 and an empty space in box 2
+      {	
+      return 4;//block the human player from winning in row1 by playing in box 4
+      }
     ///////////////END OF COLUMN2 TEST////////////////////////////
     ////////TEST IF HUMAN PLAYER ISABOUT TO WIN IN THE COLUMN3 AND BLOCK ////////////////
-    else if ((TicTacToe[2]=="O") && (TicTacToe[5]=="O") && (TicTacToe[8]==""))//see if there is an X in box 0 and 1 and an empty space in box 2
-    {	
+      else if ((TicTacToe[2]=="O") && (TicTacToe[5]=="O") && (TicTacToe[8]==""))//see if there is an X in box 0 and 1 and an empty space in box 2
+      {	
       return 8;//block the human player from winning in row1 by playing in box 8
-           }
-    
-           else if ((TicTacToe[2]=="") && (TicTacToe[5]=="O") && (TicTacToe[8]=="O"))//see if there is an X in box 0 and 1 and an empty space in box 2
-           {	
-             return 2;//block the human player from winning in row1 by playing in box 2
-                  }
-    
-            else if ((TicTacToe[2]=="O") && (TicTacToe[5]=="") && (TicTacToe[8]=="O"))//see if there is an X in box 0 and 1 and an empty space in box 2
-                  {	
-                    return 5;//block the human player from winning in row1 by playing in box 5
-               }
+      }
+      else if ((TicTacToe[2]=="") && (TicTacToe[5]=="O") && (TicTacToe[8]=="O"))//see if there is an X in box 0 and 1 and an empty space in box 2
+      {	
+      return 2;//block the human player from winning in row1 by playing in box 2
+      }
+      else if ((TicTacToe[2]=="O") && (TicTacToe[5]=="") && (TicTacToe[8]=="O"))//see if there is an X in box 0 and 1 and an empty space in box 2
+      {	
+      return 5;//block the human player from winning in row1 by playing in box 5
+      }
     ///////////////END OF COLUMN3 TEST////////////////////////////
-    
-    
-    
-    
-    
-         else
-                    {
-           return generateRandomInteger(9);//computer just searches for an empty slot to play
-                     }
-
+      else
+      {
+      return generateRandomInteger(9);//computer just searches for an empty slot to play
+      }
 }
 
 function computerPlays()
-
-	{
+{
   		if (gameOver==true)
   		return;
-  		///{
+  		
   		if(mode=="hard")
-{
-    		computerChoice= hard();//the hard function is the one that makes it hard for the human player to win
-             //alert("computerchoice in computerplays="+computerChoice)
-}
+      {
+    	computerChoice= hard();//the hard function is the one that makes it hard for the human player to win
+      }
   		else
-  		  {
-     			computerChoice= generateRandomInteger(9);
+  		{
+     	computerChoice= generateRandomInteger(9);
 		  } 
- 			 //alert(computerChoice)
-		putNaughtOrCross(computerChoice)
-// alert("computerchoice"+computerChoice)
-		player="X" //Change player to human player
-		display();
-	}
-	//gameOn=true
-	//while(gameOn===true)
-	//{
-
-
-
-function playTheGame()
-{
-choosePlayer=generateRandomInteger(2);
-if(choosePlayer==0)
-player="O" //X is the human player
-if(choosePlayer==1)
-player="O"; //O is the computer player
-//  alert(player)
-  if(player=="O")
-  { 
-    display();
- const TimeoutRef=setTimeout(computerPlays,2000);
-  //computerPlays();   
-  }
-else if(player=="X")
- display();
-//}
+  		putNaughtOrCross(computerChoice)
+		  player="X" //Change player to human player
+		  display();
 }
-
-    function clearBoard() //is reseting the game
-    {
+      function playTheGame()
+{
+      choosePlayer=generateRandomInteger(2);
+      if(choosePlayer==0)
+      player="O" //X is the human player
+      if(choosePlayer==1)
+      player="O"; //O is the computer player
+      if(player=="O")
+      { 
+     display();
+     const TimeoutRef=setTimeout(computerPlays,2000);
+      }
+     else if(player=="X")
+     display();
+     //}
+}
+function clearBoard() //is reseting the game
+{
        winner="";
        gameOver=false;
-   display2();
+     display2();
       let onscreenBoard= document.getElementsByClassName("box") ;
      numberOfPlays=0;
       //  this while loop is clear the tic toc tac
-          let counter=0;
-          while(counter<onscreenBoard.length ++)
-            {
-             onscreenBoard[counter].innerText=""; //this line is for clear a box
-             counter = counter + 1;
-            }  
-
-          TicTacToe[0]="";
-          TicTacToe[1]="";
-          TicTacToe[2]="";
-          TicTacToe[3]="";
-          TicTacToe[4]="";
-          TicTacToe[5]="";
-          TicTacToe[6]="";
-          TicTacToe[7]="";
-          TicTacToe[8]="";
-
+      let counter=0;
+      while(counter<onscreenBoard.length ++)
+     {
+     onscreenBoard[counter].innerText=""; //this line is for clear a box
+     counter = counter + 1;
+     }  
+      TicTacToe[0]="";
+      TicTacToe[1]="";
+      TicTacToe[2]="";
+      TicTacToe[3]="";
+      TicTacToe[4]="";
+      TicTacToe[5]="";
+      TicTacToe[6]="";
+      TicTacToe[7]="";
+      TicTacToe[8]="";
           player = "O";
           display();
+      location.reload();
+}
 
-//  const TimeoutRef=setTimeout(computerPlays,2000);
-   
-            location.reload();
-          }
-
-  function displayWinner(winner)
-  {
-
-    alert("checkWinner")
-     document.getElementById("Display").innerHTML=winner 
-    }
+function displayWinner(winner)
+{
+      alert("checkWinner")
+      document.getElementById("Display").innerHTML=winner 
+}
   
-    function display2 ()
-    {
-      
-      const num=localStorage.getItem("PN") //retrieve store info from the local storage
+function display2 ()
+{      
+     const num=localStorage.getItem("PN") //retrieve store info from the local storage
       //alert(num);
        mode=localStorage.getItem("dn")
      // alert ("inside  display2 " + mode);
       HumanPlayer=num;
       document.getElementById("Display").innerHTML=HumanPlayer; 
-      
+     
      // document.getElementById("message").innerHTML="ComputerTurnxxxxxxxxxx";
     document.getElementById("numberOfPlayers").innerHTML=mode;
-   
-    }
+}
 
-    function Homepage()
-    {
+function Homepage()
+{
       window.location.href="home.html"; //is change for the location of the page
-    } 
-    homeBtn=document.getElementById("Home")
-    homeBtn.addEventListener('click',Homepage);
+} 
+      homeBtn=document.getElementById("Home")
+      homeBtn.addEventListener('click',Homepage);
 
     // let messageElement = document.getElementById("message");
     // messageElement.innerHTML = "Cumputer Turn";
@@ -663,7 +632,4 @@ else if(player=="X")
     // document.getElementById("numberOfPlayers").innerHTML=mode;
    
     
-playTheGame()
-
-
-
+    playTheGame()
