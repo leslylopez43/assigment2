@@ -17,6 +17,7 @@ This is a simple Tic Tac Toe website that allows players to choose their name an
 How to Play
 ![](img.png/Screenshot%202023-04-21%20at%2015.32.50.png)
 Enter your name and difficulty level (Easy or Hard) in the input field.
+after to type you name and chose the level hard or easy then press enter key
 Click the "Start Game" button.
 The game board will appear. Click on a square to place your marker (X or O).
 The computer will then take its turn, and the game will continue until someone wins or the game ends in a tie.
@@ -121,6 +122,7 @@ Website pages are standard HTML pages and HTML templates. There is use of Django
 
 # Where can it be found on GitHub? 
 The GitHub link for the project is - https://github.com/leslylopez43/assigment2.git
+and for Browser in the website leslylopez43/leslylopez43.github.io
 
 
 
