@@ -8,13 +8,14 @@ var computerChoice= 0;
 let player="O"; //X player is human and O player is computer 
 var choosePlayer=0;
 boxes.forEach(box => {
-  box.addEventListener('click', function handleClick(event) {
+  box.addEventListener('click', function handleClick(event) 
+{
     if ((player!="X") || (gameOver==true))
     {
       document.getElementById("message").innerHTML="\!ComputerTurn!";
       // alert("it is not you turn") 
       return;
-  }
+    }
     if(box.id=="zero")
     putNaughtOrCross(0)
     if(box.id=="one")
@@ -34,14 +35,12 @@ boxes.forEach(box => {
     putNaughtOrCross(7)
     if(box.id=="eight")
     putNaughtOrCross(8)
-
-   //add Event Listener 
-  });
-  
-});
+ //add Event Listener 
+    });  
+    });
 //Tic tac toe table designer//
 
-TicTacToe=[0,1,2,
+  TicTacToe=[0,1,2,
            3,4,5,
            6,7,8];
 // each arrange location is set one space
@@ -58,7 +57,7 @@ TicTacToe=[0,1,2,
 
 //let player="O"; //X player is human and O player is computer 
 
-function checkWinner()
+function checkWinner() //code fuction for every single row//
 {
     checkTopRow();
     checkMiddleRow();
@@ -70,15 +69,15 @@ function checkWinner()
     checkcolumn3Row();
 }
 
-function checkTopRow()
-{    TopRow=TicTacToe[0]+TicTacToe[1]+TicTacToe[2];
+function checkTopRow() //Code for the top row//
+{   
+    TopRow=TicTacToe[0]+TicTacToe[1]+TicTacToe[2];
     if(TopRow=="XXX")
     {
       winner=player;
       gameOver=true;
     displayWinner("X player wins");
-    }
-  
+    } 
     if(TopRow=="OOO")
     {
     winner=player;
@@ -88,7 +87,8 @@ function checkTopRow()
 }
 
 function checkMiddleRow()
-{    MiddleRow=TicTacToe[3]+TicTacToe[4]+TicTacToe[5];
+{    
+    MiddleRow=TicTacToe[3]+TicTacToe[4]+TicTacToe[5];
     if(MiddleRow=="XXX")
     {
     winner=player;
@@ -106,7 +106,8 @@ function checkMiddleRow()
 
 }
 function checkbottomRow()
-{   bottomRow=TicTacToe[6]+TicTacToe[7]+TicTacToe[8];
+{   
+    bottomRow=TicTacToe[6]+TicTacToe[7]+TicTacToe[8];
     if(bottomRow=="XXX")
     {
     winner=player;
@@ -121,10 +122,11 @@ function checkbottomRow()
     gameOver=true;
     displayWinner("0 player wins");
     }
-
 }
+
 function checkdiagonal1Row()
-{   diagonal1Row=TicTacToe[0]+TicTacToe[4]+TicTacToe[8];
+{   
+    diagonal1Row=TicTacToe[0]+TicTacToe[4]+TicTacToe[8];
     if(diagonal1Row=="XXX")
     {
     winner=player;
@@ -175,7 +177,8 @@ function checkcolumn1Row()
     }
 }
 function checkcolumn2Row()
-{   column2Row=TicTacToe[1]+TicTacToe[4]+TicTacToe[7];
+{   
+    column2Row=TicTacToe[1]+TicTacToe[4]+TicTacToe[7];
     if(column2Row=="XXX")
     {
     winner=player;
@@ -185,14 +188,15 @@ function checkcolumn2Row()
     
     column2=TicTacToe[1]+TicTacToe[4]+TicTacToe[7];
     if(column2=="OOO")
-  {
+   {
     winner=player;
     gameOver=true;
     displayWinner("0 player wins");  
-  }
+   }
 }
 function checkcolumn3Row()
-{  column3Row=TicTacToe[2]+TicTacToe[5]+TicTacToe[8];
+{  
+   column3Row=TicTacToe[2]+TicTacToe[5]+TicTacToe[8];
    if(column3Row=="XXX")
    {
     winner=player;
@@ -230,7 +234,8 @@ function putNaughtOrCross(boxNumber)
    
 } // End of put nought or cross function 
 
-function generateRandomInteger(max) {
+function generateRandomInteger(max) 
+{
   let noSpaceFound=true;
   var randomNumber; 
   while((noSpaceFound==true) && (numberOfPlays<9))
@@ -242,18 +247,12 @@ function generateRandomInteger(max) {
   {
     noSpaceFound=false;//set noSpaceFound to false to stop while loop
   }
+  }
+  return randomNumber;
 }
- return randomNumber;
-}
-if(player=="O")
-{
- /*let computerChoice= generateRandomInteger(8);
- putNaughtOrCross(computerChoice)*/
- //const TimeoutRef=setTimeout(computerPlays,1000);
-}
+  
 function display()
 {
-  
   if(player=="X")
   
   {
@@ -269,10 +268,9 @@ function display()
   }
 }
 
-
 function playDefencePositionOne()
 {
-decider=generateRandomInteger(4);
+    decider=generateRandomInteger(4);
   // alert("decider="+decider);
     if(decider==0)
        return 0;
@@ -284,7 +282,8 @@ decider=generateRandomInteger(4);
        return 8;
 }
 function hard()
-	{//start of function hard
+	{
+    //start of function hard
  		Row2=TicTacToe[3]+TicTacToe[4]+TicTacToe[5];
  		if ((Row2=="X")&&(numberOfPlays==1))//This if statement is testing against X only because the concatenation operator ignores spaces
  		{
@@ -327,13 +326,13 @@ function hard()
     }
     else if ((TicTacToe[6]=="") && (TicTacToe[7]=="X") && (TicTacToe[8]=="X"))//see if there is an X in box 0 and 1 and an empty space in box 2
     {	
-   return 6;//block the human player from winning in row1 by playing in box 6
+      return 6;//block the human player from winning in row1 by playing in box 6
    }
 
    else if ((TicTacToe[6]=="X") && (TicTacToe[7]=="") && (TicTacToe[8]=="X"))//see if there is an X in box 0 and 1 and an empty space in box 2
-              {	
-                return 7;//block the human player from winning in row1 by playing in box 7
-           }
+    {	
+      return 7;//block the human player from winning in row1 by playing in box 7
+     }
 ///////////////END OF TIRTH ROW TEST////////////////////////////
     ////////TEST IF HUMAN PLAYER ISABOUT TO WIN IN THE DIAGONAL1 ROW AND BLOCK ////////////////
     else if ((TicTacToe[0]=="X") && (TicTacToe[4]=="X") && (TicTacToe[8]==""))//see if there is an X in box 0 and 1 and an empty space in box 2
@@ -603,7 +602,7 @@ function clearBoard() //is reseting the game
 function displayWinner(winner)
 {
       // alert("checkWinner")
-      document.getElementById("Display").innerHTML="The  winner is " + winner;
+      document.getElementById("Display").innerHTML=" " + winner;
 }
   
 function display2 ()
