@@ -602,8 +602,8 @@ function clearBoard() //is reseting the game
 
 function displayWinner(winner)
 {
-      alert("checkWinner")
-      document.getElementById("Display").innerHTML=winner 
+      // alert("checkWinner")
+      document.getElementById("Display").innerHTML="The  winner is " + winner;
 }
   
 function display2 ()
