@@ -1,5 +1,4 @@
 body{
-  margin: 1px;
 background-color: blueviolet;
 }
 h1 {
@@ -94,14 +93,6 @@ table {
    body{
     padding: 90px;
    }
-/*    
-    HTML CSSResult Skip Results Iframe
-EDIT ON
-body {
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-} */
 
 .message-box {
   font-size: 50px;
@@ -119,7 +110,7 @@ body {
 }
 #chooseAName{
   color: #0f2a34;
-  font: size 100px;px ;
+  font: size 100px
 }
 :placeholder{
   size: 5px;

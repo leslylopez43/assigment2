@@ -326,13 +326,13 @@ function hard()
     }
     else if ((TicTacToe[6]=="") && (TicTacToe[7]=="X") && (TicTacToe[8]=="X"))//see if there is an X in box 0 and 1 and an empty space in box 2
     {	
-      return 6;//block the human player from winning in row1 by playing in box 6
+   return 6;//block the human player from winning in row1 by playing in box 6
    }
 
    else if ((TicTacToe[6]=="X") && (TicTacToe[7]=="") && (TicTacToe[8]=="X"))//see if there is an X in box 0 and 1 and an empty space in box 2
     {	
-      return 7;//block the human player from winning in row1 by playing in box 7
-     }
+     return 7;//block the human player from winning in row1 by playing in box 7
+           }
 ///////////////END OF TIRTH ROW TEST////////////////////////////
     ////////TEST IF HUMAN PLAYER ISABOUT TO WIN IN THE DIAGONAL1 ROW AND BLOCK ////////////////
     else if ((TicTacToe[0]=="X") && (TicTacToe[4]=="X") && (TicTacToe[8]==""))//see if there is an X in box 0 and 1 and an empty space in box 2
