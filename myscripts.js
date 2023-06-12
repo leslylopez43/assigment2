@@ -159,6 +159,8 @@ function checkcolumn2Row() {
     displayWinner("O player wins");
   }
 }
+
+
 function checkcolumn3Row()
 {  
    column3Row=TicTacToe[2]+TicTacToe[5]+TicTacToe[8];
@@ -169,7 +171,7 @@ function checkcolumn3Row()
     displayWinner("X player wins");
    }
     
-  column3=TicTacToe[2]+TicTacToe[5]+TicTacToe[8];
+   column3Row=TicTacToe[2]+TicTacToe[5]+TicTacToe[8];
   if(column3=="OOO")
   {
   winner=player;
@@ -204,14 +206,6 @@ function generateRandomInteger(max) {
   return positions[Math.floor(Math.random() * positions.length)];
 }
 
-function hard() {
-  Row2 = TicTacToe[3] + TicTacToe[4] + TicTacToe[5];
-  if (Row2 == "X" && numberOfPlays == 1) {
-    let boardPosition = playDefencePositionOne();
-    return boardPosition;
-  }
-  // Rest of the code...
-}
 
   
 function display()
@@ -517,9 +511,15 @@ function computerPlays() {
   putNaughtOrCross(boxNumber);
 }
 
-function displayWinner(message) {
-  document.getElementById("message").innerHTML = message;
+// function displayWinner(message) {
+//   document.getElementById("message").innerHTML = message;
+// }
+
+function displayWinner(winner) {
+  // alert("checkWinner")
+  document.getElementById("Display").innerHTML = " " + winner;
 }
+
 
 function playTheGame()
 {
@@ -584,6 +584,10 @@ function display2 ()
     document.getElementById("numberOfPlayers").innerHTML=mode;
 }
 
+function resetGame() {
+  // Add your code here to reset the game
+  console.log("Game reset"); // Example: Log a message to the console
+}
 function Homepage()
 {
       window.location.href="home.html"; //is change for the location of the page
@@ -600,7 +604,7 @@ function Homepage()
 function Homepage() {
   // Your game logic here
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-  Homepage();
+window.addEventListener('DOMContentLoaded', (event) => {
+  //
 });
+
