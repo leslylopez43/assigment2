@@ -1,4 +1,4 @@
-const boxes = document.querySelectorAll('.box');
+const boxes=document.querySelectorAll('.box');
 var numberOfPlays=0;
 var winner="";
 var HumanPlayer="";
@@ -45,15 +45,11 @@ boxes.forEach(box => {
            6,7,8];
 // each arrange location is set one space
 
-  TicTacToe[0]="";
-  TicTacToe[1]="";
-  TicTacToe[2]="";
-  TicTacToe[3]="";
-  TicTacToe[4]="";
-  TicTacToe[5]="";
-  TicTacToe[6]="";
-  TicTacToe[7]="";
-  TicTacToe[8]="";
+TicTacToe = [
+  "", "", "",
+  "", "", "",
+  "", "", ""
+];
 
 //let player="O"; //X player is human and O player is computer 
 
@@ -71,128 +67,97 @@ function checkWinner() //code fuction for every single row//
 
 function checkTopRow() //Code for the top row//
 {   
-    TopRow=TicTacToe[0]+TicTacToe[1]+TicTacToe[2];
+  TopRow= TicTacToe[0] + TicTacToe[1] + TicTacToe[2];
     if(TopRow=="XXX")
     {
-      winner=player;
-      gameOver=true;
+      winner = player;
+      gameOver = true;
     displayWinner("X player wins");
     } 
-    if(TopRow=="OOO")
+  else if(TopRow=="OOO")
     {
-    winner=player;
-    gameOver=true;
+    winner = player;
+    gameOver = true;
     displayWinner("O player wins");
     }
 }
 
-function checkMiddleRow()
-{    
-    MiddleRow=TicTacToe[3]+TicTacToe[4]+TicTacToe[5];
-    if(MiddleRow=="XXX")
-    {
-    winner=player;
-    gameOver=true;
+function checkMiddleRow() {
+  MiddleRow = TicTacToe[3] + TicTacToe[4] + TicTacToe[5];
+  if (MiddleRow == "XXX") {
+    winner = player;
+    gameOver = true;
     displayWinner("X player wins");
-    }
-    
-    MiddleRow=TicTacToe[3]+TicTacToe[4]+TicTacToe[5];
-    if(MiddleRow=="OOO")
-    {
-    winner=player;
-    gameOver=true;
-    displayWinner("0 player wins");
-    }
-
-}
-function checkbottomRow()
-{   
-    bottomRow=TicTacToe[6]+TicTacToe[7]+TicTacToe[8];
-    if(bottomRow=="XXX")
-    {
-    winner=player;
-    gameOver=true;
-    displayWinner("X player wins");
-    }
-    
-     bottomRow=TicTacToe[6]+TicTacToe[7]+TicTacToe[8];
-    if(bottomRow=="OOO")
-    {
-    winner=player;
-    gameOver=true;
-    displayWinner("0 player wins");
-    }
-}
-
-function checkdiagonal1Row()
-{   
-    diagonal1Row=TicTacToe[0]+TicTacToe[4]+TicTacToe[8];
-    if(diagonal1Row=="XXX")
-    {
-    winner=player;
-    gameOver=true;
-    displayWinner("X player wins");
-    }
-    
-    diagonal1=TicTacToe[0]+TicTacToe[4]+TicTacToe[8];
-    if(diagonal1=="OOO")
-    {
-    winner=player;
-    gameOver=true;
-    displayWinner("0 player wins");
-    }
-}
-function checkdiagonal2Row()
-{   diagonal2Row=TicTacToe[6]+TicTacToe[4]+TicTacToe[2];
-    if(diagonal2Row=="XXX")
-    {
-    winner=player;
-    gameOver=true;
-    displayWinner("X player wins");
-    }
-    
-    diagonal2=TicTacToe[6]+TicTacToe[4]+TicTacToe[2];
-    if(diagonal2=="OOO")
-    {
-    winner=player;
-    gameOver=true;
-    displayWinner("0 player wins");
-    }
-}
-function checkcolumn1Row()
-{   column1Row=TicTacToe[0]+TicTacToe[3]+TicTacToe[6];
-    if(column1Row=="XXX")
-    {
-    winner=player;
-    gameOver=true;
-    displayWinner("X player wins");
-    }
-    
-    column1=TicTacToe[0]+TicTacToe[3]+TicTacToe[6];
-    if(column1=="OOO")
-    {
-    winner=player;
-    gameOver=true;
-    displayWinner("0 player wins");
-    }
-}
-function checkcolumn2Row()
-{   
-    column2Row=TicTacToe[1]+TicTacToe[4]+TicTacToe[7];
-    if(column2Row=="XXX")
-    {
-    winner=player;
-    gameOver=true;
-    displayWinner("X player wins");
-    }
-    
-    column2=TicTacToe[1]+TicTacToe[4]+TicTacToe[7];
-    if(column2=="OOO")
+  } 
+  else if (MiddleRow == "OOO")
    {
-    winner=player;
-    gameOver=true;
-    displayWinner("0 player wins");  
-   }
+    winner = player;
+    gameOver = true;
+    displayWinner("O player wins");
+  }
+}
+
+function checkbottomRow() {
+  bottomRow = TicTacToe[6] + TicTacToe[7] + TicTacToe[8];
+  if (bottomRow == "XXX") {
+    winner = player;
+    gameOver = true;
+    displayWinner("X player wins");
+  } else if (bottomRow == "OOO") {
+    winner = player;
+    gameOver = true;
+    displayWinner("O player wins");
+  }
+}
+function checkdiagonal1Row() {
+  diagonal1Row = TicTacToe[0] + TicTacToe[4] + TicTacToe[8];
+  if (diagonal1Row == "XXX") {
+    winner = player;
+    gameOver = true;
+    displayWinner("X player wins");
+  } else if (diagonal1Row == "OOO") {
+    winner = player;
+    gameOver = true;
+    displayWinner("O player wins");
+  }
+}
+
+function checkdiagonal2Row() {
+  diagonal2Row = TicTacToe[6] + TicTacToe[4] + TicTacToe[2];
+  if (diagonal2Row == "XXX") {
+    winner = player;
+    gameOver = true;
+    displayWinner("X player wins");
+  } else if (diagonal2Row == "OOO") {
+    winner = player;
+    gameOver = true;
+    displayWinner("O player wins");
+  }
+}
+function checkcolumn1Row() {
+  column1Row = TicTacToe[0] + TicTacToe[3] + TicTacToe[6];
+  if (column1Row == "XXX") {
+    winner = player;
+    gameOver = true;
+    displayWinner("X player wins");
+  } else if (column1Row == "OOO") {
+    winner = player;
+    gameOver = true;
+    displayWinner("O player wins");
+  }
+}
+
+function checkcolumn2Row() {
+  column2Row = TicTacToe[1] + TicTacToe[4] + TicTacToe[7];
+  if (column2Row == "XXX") {
+    winner = player;
+    gameOver = true;
+    displayWinner("X player wins");
+  } else if (column2Row == "OOO") {
+    winner = player;
+    gameOver = true;
+    displayWinner("O player wins");
+  }
 }
 function checkcolumn3Row()
 {  
@@ -234,32 +199,33 @@ function putNaughtOrCross(boxNumber)
    
 } // End of put nought or cross function 
 
-function generateRandomInteger(max) 
-{
-  let noSpaceFound=true;
-  var randomNumber; 
-  while((noSpaceFound==true) && (numberOfPlays<9))
-  {
-  // randomNumber=Math.floor(Math.random() * max) + 1;
-  randomNumber=Math.floor(Math.random() * max);
-  
-  if (TicTacToe[randomNumber] =="")  //CHECK ARRAY LOCATION IF EMPTY
-  {
-    noSpaceFound=false;//set noSpaceFound to false to stop while loop
-  }
-  }
-  return randomNumber;
+function generateRandomInteger(max) {
+  let positions = [0, 2, 6, 8];
+  return positions[Math.floor(Math.random() * positions.length)];
 }
+
+function hard() {
+  Row2 = TicTacToe[3] + TicTacToe[4] + TicTacToe[5];
+  if (Row2 == "X" && numberOfPlays == 1) {
+    let boardPosition = playDefencePositionOne();
+    return boardPosition;
+  }
+  // Rest of the code...
+}
+
   
 function display()
 {
-  if(player=="X")
-  
-  {
-    // alert("player1")
-   document.getElementById("message").innerHTML=HumanPlayer;
-   
+  if (player == "X") {
+    onscreenBoard[boxNumber].innerText = player;
+    TicTacToe[boxNumber] = player;
+    numberOfPlays++;
+    display();
+    const TimeoutRef = setTimeout(computerPlays, 2000);
+    player = "O"; // Change player to computer after displaying
+    checkWinner();
   }
+  
   if (player=="O")
     
   {
@@ -538,24 +504,24 @@ function attack()
       }
 }
 
-function computerPlays()
-{
-  		if (gameOver==true)
-  		return;
-  		
-  		if(mode=="hard")
-      {
-    	computerChoice= hard();//the hard function is the one that makes it hard for the human player to win
-      }
-  		else
-  		{
-     	computerChoice= generateRandomInteger(9);
-		  } 
-  		putNaughtOrCross(computerChoice)
-		  player="X" //Change player to human player
-		  display();
+function computerPlays() {
+  const emptyBoxes = [];
+  for (let i = 0; i < TicTacToe.length; i++) {
+    if (TicTacToe[i] === "") {
+      emptyBoxes.push(i);
+    }
+  }
+
+  const randomIndex = Math.floor(Math.random() * emptyBoxes.length);
+  const boxNumber = emptyBoxes[randomIndex];
+  putNaughtOrCross(boxNumber);
 }
-      function playTheGame()
+
+function displayWinner(message) {
+  document.getElementById("message").innerHTML = message;
+}
+
+function playTheGame()
 {
       choosePlayer=generateRandomInteger(2);
       if(choosePlayer==0)
@@ -630,5 +596,11 @@ function Homepage()
     // document.getElementById("message").innerHTML="ComputerTurnxxxxxxxxxx";
     // document.getElementById("numberOfPlayers").innerHTML=mode;
    
-    
-    playTheGame()
+
+function Homepage() {
+  // Your game logic here
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  Homepage();
+});
