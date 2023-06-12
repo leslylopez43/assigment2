@@ -178,8 +178,8 @@ function checkcolumn3Row()
   }
 }
 function putNaughtOrCross(boxNumber)
-{
-    let onscreenBoard=document.getElementsByClassName("box")
+{   let onscreenBoard = document.getElementsByClassName("box");
+
     //  alert(TicTacToe[boxNumber] )
     if (TicTacToe[boxNumber] =="")  //CHECK ARRAY LOCATION IF EMPTY
     {
