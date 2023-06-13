@@ -65,22 +65,24 @@ function checkWinner() //code fuction for every single row//
     checkcolumn3Row();
 }
 
+
 function checkTopRow() //Code for the top row//
 {   
-  TopRow= TicTacToe[0] + TicTacToe[1] + TicTacToe[2];
-    if(TopRow=="XXX")
+  const TopRow = TicTacToe[0] + TicTacToe[1] + TicTacToe[2];
+    if (TopRow === "XXX")
     {
       winner = player;
       gameOver = true;
     displayWinner("X player wins");
     } 
-  else if(TopRow=="OOO")
+  else if (TopRow === "OOO")
     {
     winner = player;
     gameOver = true;
     displayWinner("O player wins");
     }
 }
+
 
 function checkMiddleRow() {
   MiddleRow = TicTacToe[3] + TicTacToe[4] + TicTacToe[5];
@@ -161,51 +163,37 @@ function checkcolumn2Row() {
 }
 
 
-function checkcolumn3Row()
-{  
-   column3Row=TicTacToe[2]+TicTacToe[5]+TicTacToe[8];
-   if(column3Row=="XXX")
-   {
-    winner=player;
-    gameOver=true;
+function checkcolumn3Row() {
+  column3Row = TicTacToe[2] + TicTacToe[5] + TicTacToe[8];
+  if (column3Row == "XXX") {
+    winner = player;
+    gameOver = true;
     displayWinner("X player wins");
-   }
-    
-   column3Row=TicTacToe[2]+TicTacToe[5]+TicTacToe[8];
-  if(column3=="OOO")
-  {
-  winner=player;
-  gameOver=true;
-  displayWinner("0 player wins");
+  } else if (column3Row == "OOO") {
+    winner = player;
+    gameOver = true;
+    displayWinner("O player wins");
   }
 }
-function putNaughtOrCross(boxNumber)
-{   let onscreenBoard = document.getElementsByClassName("box");
 
-    //  alert(TicTacToe[boxNumber] )
-    if (TicTacToe[boxNumber] =="")  //CHECK ARRAY LOCATION IF EMPTY
-    {
-  //Check if player is human then change to computer player and call computerplays  
-    onscreenBoard[boxNumber].innerText=player;
-    TicTacToe[boxNumber]=player;//Record player position in array TicTacToe
-    numberOfPlays++;//increases numerOfPlays by one
-    if(player=="X")
-    {
-     player="O";//Change player to computer
-    display();
-    //computerPlays();
-    const TimeoutRef=setTimeout(computerPlays,2000);//computer plays after 2 seconds
+function putNaughtOrCross(boxNumber) {
+  let onscreenBoard = document.getElementsByClassName("box");
+  if (TicTacToe[boxNumber] === "") {
+    onscreenBoard[boxNumber].innerText = player;
+    TicTacToe[boxNumber] = player;
+    numberOfPlays++;
+    if (player === "X") {
+      player = "O";
+      display();
+      const TimeoutRef = setTimeout(computerPlays, 2000);
     }
-    checkWinner();   
-    }
-   
-} // End of put nought or cross function 
-
-function generateRandomInteger(max) {
-  let positions = [0, 2, 6, 8];
-  return positions[Math.floor(Math.random() * positions.length)];
+    checkWinner();
+  }
 }
 
+function generateRandomInteger(max) {
+   return Math.floor(Math.random() * max);
+}
 
   
 function display()
@@ -215,32 +203,37 @@ function display()
     TicTacToe[boxNumber] = player;
     numberOfPlays++;
     display();
-    const TimeoutRef = setTimeout(computerPlays, 2000);
     player = "O"; // Change player to computer after displaying
     checkWinner();
+    const TimeoutRef = setTimeout(computerPlays, 2000);
   }
   
-  if (player=="O")
-    
+  if (player=="O") 
   {
     // alert("computer2")
     document.getElementById("message").innerHTML="ComputerPlays"
   }
 }
 
+function generateRandomInteger(max) {
+  return Math.floor(Math.random() * max);
+}
+
 function playDefencePositionOne()
 {
     decider=generateRandomInteger(4);
   // alert("decider="+decider);
-    if(decider==0)
+    if(decider == 0)
        return 0;
-    if(decider==1)
+    if(decider == 1)
        return 2;
-    if(decider==2)
+    if(decider == 2)
        return 6;
-     if(decider==3)
+     if(decider == 3)
        return 8;
 }
+
+
 function hard()
 	{
     //start of function hard
@@ -511,9 +504,6 @@ function computerPlays() {
   putNaughtOrCross(boxNumber);
 }
 
-// function displayWinner(message) {
-//   document.getElementById("message").innerHTML = message;
-// }
 
 function displayWinner(winner) {
   // alert("checkWinner")
@@ -523,20 +513,24 @@ function displayWinner(winner) {
 
 function playTheGame()
 {
-      choosePlayer=generateRandomInteger(2);
-      if(choosePlayer==0)
-      player="O" //X is the human player
-      if(choosePlayer==1)
-      player="O"; //O is the computer player
-      if(player=="O")
+      choosePlayer = generateRandomInteger(2);
+      if(choosePlayer == 0)
+      player = "O"; //X is the human player
+      if(choosePlayer == 1)
+      player = "O"; //O is the computer player
+      if(player == "O")
       { 
      display();
      const TimeoutRef=setTimeout(computerPlays,2000);
       }
-     else if(player=="X")
+     else if(player == "X"){
      display();
-     //}
+     }
 }
+
+
+
+
 function clearBoard() //is reseting the game
 {
        winner="";
