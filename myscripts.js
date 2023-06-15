@@ -491,7 +491,7 @@ function attack()
       }
 }
 
-function computerPlays() {
+function computerPlays(TicTacToe) {
   const emptyBoxes = [];
   for (let i = 0; i < TicTacToe.length; i++) {
     if (TicTacToe[i] === "") {
