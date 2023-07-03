@@ -1,4 +1,4 @@
-const boxes=document.querySelectorAll('.box');
+const boxes = document.querySelectorAll('.box');
 var numberOfPlays=0;
 var winner="";
 var HumanPlayer="";
@@ -45,11 +45,20 @@ boxes.forEach(box => {
            6,7,8];
 // each arrange location is set one space
 
-TicTacToe = [
-  "", "", "",
-  "", "", "",
-  "", "", ""
-];
+// TicTacToe = [
+//   "", "", "",
+//   "", "", "",
+//   "", "", ""
+// ];
+TicTacToe[0]="";
+TicTacToe[1]="";
+TicTacToe[2]="";
+TicTacToe[3]="";
+TicTacToe[4]="";
+TicTacToe[5]="";
+TicTacToe[6]="";
+TicTacToe[7]="";
+TicTacToe[8]="";
 
 //let player="O"; //X player is human and O player is computer 
 
